@@ -1,3 +1,6 @@
 date,event_type,planets,description,source
 2017-08-21,Solar Eclipse,Sun Moon Earth,Total solar eclipse visible across North America,eclipse.gsfc.nasa.gov
-2020-12-21,Conjunction,Jupiter Saturn,Great conjunction Jupiter and Saturn closest in 400 years,nasa.gov
+2020-12-21,Conjunction,Jupiter Saturn,Great conjunction closest approach in 400 years,nasa.gov
+# Content team — add 48 more verified events above this line
+# Source your dates from eclipse.gsfc.nasa.gov and timeanddate.com
+# Each row needs: date, event_type, planets, description, source

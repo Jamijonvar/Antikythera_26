@@ -1,7 +1,4 @@
-# TODO: Back End team works here
-# This file detects astronomical events (eclipses, conjunctions)
-# Input: date string and planet positions
-# Output: list of detected events
-
-def detect_events(date_str):
-    pass
+# Back End team — event detection
+# Detect eclipses and conjunctions from planet positions
+# Input: date string
+# Output: list of detected events with name, date, and planets involved
