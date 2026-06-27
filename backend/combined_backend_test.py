@@ -30,7 +30,7 @@ def get_planet():
     
     planet_name = request.args.get("name")
     try:
-        t = ts.now()
+        t = ts.now() #this needs to be changed to the date from the request args, but for now it just uses the current time
         earth = planets['earth']
         target_planet = planets[planet_name]
         astrometric = earth.at(t).observe(target_planet)
