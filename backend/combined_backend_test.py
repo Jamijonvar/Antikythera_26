@@ -2,8 +2,10 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 from skyfield.api import load
 
-CORS(app)
 app = Flask(__name__)
+
+CORS(app)
+
 ts = load.timescale()
 planets = load('de421.bsp')
 
@@ -20,9 +22,6 @@ def get_events():
     days = request.args.get('days', 30)
     # TODO: call database.py here
     return jsonify({"date": date, "events": []})
-
-if __name__ == '__main__':
-    app.run(debug=True)
 
 #_________________Jonny code VVVV______________
 
