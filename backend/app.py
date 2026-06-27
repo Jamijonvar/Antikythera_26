@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from skyfield.api import load
+from flask_cors import CORS
 
 app = Flask(__name__)
 ts = load.timescale()
