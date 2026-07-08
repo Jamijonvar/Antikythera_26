@@ -1,3 +1,72 @@
-<!-- Front End team — main page -->
-<!-- Build the layout: header, date picker, solar system canvas, events panel, event browser screen -->
-<!-- Connect to style.css for styling, app.js for logic, diagram.js for the canvas drawing -->
+<!DOCTYPE html>
+<!-- Front End team, main page -->
+<!-- This page has two screens. The Sky View screen shows the solar system diagram on the -->
+<!-- left and the events near the chosen date on the right. The Browse Events screen lets -->
+<!-- you scroll and search through every event in the database. -->
+<!-- style.css handles the look, app.js handles the logic, diagram.js draws the canvas. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antikythera</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- The header holds the title, the date picker, and the two screen tabs. -->
+    <header class="app-header">
+        <div class="title-block">
+            <h1>Antikythera</h1>
+            <p class="tagline">Type a date and see where the planets were and what happened in the sky.</p>
+        </div>
+
+        <!-- The date picker and the button that asks the backend for that date. -->
+        <form id="date-form" class="date-form">
+            <label for="date-input">Date</label>
+            <input type="date" id="date-input" name="date" value="2017-08-21" required>
+            <input type="number" id="days-input" name="days" value="30" min="1" max="365" title="How many days on either side to search for events">
+            <span class="days-label">days window</span>
+            <button type="submit">Show the sky</button>
+        </form>
+
+        <!-- The two tabs that switch between the two screens. -->
+        <nav class="tabs">
+            <button id="tab-sky" class="tab active" type="button">Sky View</button>
+            <button id="tab-browse" class="tab" type="button">Browse Events</button>
+        </nav>
+    </header>
+
+    <!-- A place to show friendly error messages from the backend. Hidden until it is needed. -->
+    <div id="message" class="message" hidden></div>
+
+    <main>
+        <!-- Screen one, the sky view. Two panels side by side. -->
+        <section id="screen-sky" class="screen active">
+            <div class="panel canvas-panel">
+                <h2 id="sky-heading">The sky on this date</h2>
+                <!-- diagram.js draws the solar system onto this canvas. -->
+                <canvas id="solar-canvas" width="640" height="640"></canvas>
+            </div>
+
+            <div class="panel events-panel">
+                <h2>Events near this date</h2>
+                <!-- app.js fills this list with one card per event it finds. -->
+                <div id="events-list" class="events-list"></div>
+            </div>
+        </section>
+
+        <!-- Screen two, the browse and search screen. -->
+        <section id="screen-browse" class="screen">
+            <div class="panel browse-panel">
+                <h2>Browse every event</h2>
+                <input type="search" id="browse-search" class="browse-search" placeholder="Search by type, planet, or words in the description">
+                <div id="browse-list" class="events-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- diagram.js must load before app.js, because app.js calls the drawing function it defines. -->
+    <script src="diagram.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

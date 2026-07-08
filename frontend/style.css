@@ -1,3 +1,254 @@
-/* Front End team — styling */
-/* Dark theme. Clean layout. Two panels side by side. */
-/* Left panel: solar system canvas. Right panel: events list. */
+/* Front End team, styling */
+/* A dark theme, because the app is about the night sky. */
+/* The Sky View screen puts the solar system canvas on the left and the events on the right. */
+
+/* These variables collect our colours in one place so they are easy to adjust later. */
+:root {
+    --background: #0b1020;
+    --panel: #141a2e;
+    --panel-edge: #26304d;
+    --text: #e7ecf7;
+    --text-soft: #9aa6c4;
+    --accent: #f5c451;
+    --accent-soft: #3b4a6b;
+    --danger: #ff8a80;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    /* Calibri is the main face. The rest of the list is a fallback for any computer that
+       does not have Calibri installed, so the page still looks tidy everywhere. */
+    font-family: Calibri, "Segoe UI", system-ui, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* The header sits at the top and holds the title, the date form, and the tabs. */
+.app-header {
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--panel-edge);
+    background: linear-gradient(180deg, #10162a, #0b1020);
+}
+
+.title-block h1 {
+    margin: 0;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: var(--accent);
+}
+
+.tagline {
+    margin: 4px 0 16px;
+    color: var(--text-soft);
+    font-size: 14px;
+}
+
+/* The date form lays its controls out in a row that wraps on small screens. */
+.date-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.date-form label {
+    color: var(--text-soft);
+    font-size: 14px;
+}
+
+.date-form input {
+    background: var(--panel);
+    border: 1px solid var(--panel-edge);
+    color: var(--text);
+    padding: 8px 10px;
+    font-size: 14px;
+}
+
+#days-input {
+    width: 70px;
+}
+
+.days-label {
+    color: var(--text-soft);
+    font-size: 13px;
+}
+
+.date-form button {
+    background: var(--accent);
+    color: #1a1300;
+    border: none;
+    padding: 9px 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.date-form button:hover {
+    filter: brightness(1.08);
+}
+
+/* The tabs that switch between the two screens. */
+.tabs {
+    display: flex;
+    gap: 8px;
+}
+
+.tab {
+    background: transparent;
+    color: var(--text-soft);
+    border: 1px solid var(--panel-edge);
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.tab.active {
+    background: var(--panel);
+    color: var(--text);
+    border-color: var(--accent);
+}
+
+/* The message bar shows backend errors in a soft red so they are noticeable but not alarming. */
+.message {
+    margin: 16px 28px 0;
+    padding: 12px 16px;
+    background: rgba(255, 138, 128, 0.12);
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    font-size: 14px;
+}
+
+main {
+    padding: 20px 28px 40px;
+}
+
+/* Only the active screen is shown. app.js toggles the active class. */
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* The Sky View screen is a two column grid. On narrow screens it becomes one column. */
+#screen-sky {
+    gap: 20px;
+}
+
+#screen-sky.active {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 20px;
+}
+
+@media (max-width: 900px) {
+    #screen-sky.active {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Panels are the framed boxes that hold each area of content. */
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--panel-edge);
+    padding: 18px;
+}
+
+.panel h2 {
+    margin: 0 0 14px;
+    font-size: 17px;
+    color: var(--text);
+}
+
+/* The canvas is centred inside its panel and never spills past the panel width. */
+.canvas-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#solar-canvas {
+    max-width: 100%;
+    height: auto;
+    background: radial-gradient(circle at center, #0e1530, #070b18);
+}
+
+/* The events list is a scrolling column of cards. */
+.events-panel {
+    max-height: 680px;
+    overflow-y: auto;
+}
+
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Each event is a plain bordered box with square corners. The event type is the only
+   splash of colour, so the list reads cleanly rather than busy. */
+.event-card {
+    background: #10162a;
+    border: 1px solid var(--panel-edge);
+    padding: 12px 14px;
+}
+
+.event-card .event-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.event-card .event-type {
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 14px;
+}
+
+.event-card .event-date {
+    color: var(--text-soft);
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.event-card .event-desc {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0 0 8px;
+}
+
+.event-card .event-meta {
+    font-size: 12px;
+    color: var(--text-soft);
+}
+
+.event-card .event-planets {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/* A gentle note shown when there is nothing to display. */
+.empty-note {
+    color: var(--text-soft);
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* The browse screen search box spans the full panel width. */
+.browse-search {
+    width: 100%;
+    background: #10162a;
+    border: 1px solid var(--panel-edge);
+    color: var(--text);
+    padding: 10px 12px;
+    font-size: 14px;
+    margin-bottom: 16px;
+}

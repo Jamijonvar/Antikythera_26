@@ -1,0 +1,15 @@
+# Python virtual environment. Everyone builds their own with the steps in the README,
+# so it should never be committed.
+venv/
+.venv/
+
+# Compiled Python files.
+__pycache__/
+*.pyc
+
+# The events database is generated from content/events.csv by the seeder,
+# so it is rebuilt whenever needed and does not belong in version control.
+content/events.db
+
+# Editor and operating system clutter.
+.DS_Store
