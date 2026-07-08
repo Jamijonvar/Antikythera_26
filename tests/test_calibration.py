@@ -1,10 +1,6 @@
-# TODO: Back End team writes calibration tests here
-# Each test checks that a known historical event is correctly detected
-
-def test_2017_solar_eclipse():
-    # The app should detect a solar eclipse on August 21 2017
-    pass
-
-def test_2020_jupiter_saturn_conjunction():
-    # The app should detect the Jupiter Saturn conjunction on December 21 2020
-    pass
+# Back End team — calibration tests
+# Verify the app correctly predicts at least 5 known historical events
+# Test 1: 2017-08-21 total solar eclipse detected
+# Test 2: 2020-12-21 Jupiter Saturn conjunction detected
+# Test 3: at least one Mars opposition date correct
+# Run with: pytest tests/test_calibration.py

@@ -1,67 +1,77 @@
 # Contributing Rules — Read Before You Touch Anything
 
-## Golden Rules
-1. Never commit directly to main. Ever.
-2. Always pull before you start working.
-3. Stay in your team folder. Do not touch other teams files.
-4. Write a real commit message every time.
-5. Push at the end of every session no matter what.
+## Your Branch
+You have one branch for the whole project. It is named after you.
+Switch to your branch in GitHub Desktop before you do anything else.
+Never work on main. Never.
 
-## Your Team Folder
-| Team | Your folder | Stay out of |
-|------|------------|-------------|
-| Back End | backend/ | frontend/ content/ |
-| Front End | frontend/ | backend/ content/ |
-| Content | content/ | backend/ frontend/ |
+Back End:   be/dieuson  |  be/kiet  |  be/sophia
+Front End:  fe/shubaan  |  fe/nia   |  fe/jeremiah
+Content:    ct/jonny    |  ct/joseph |  ct/dillon
 
-## Branch Rules
-Create your branch before writing a single line.
-Name it like this:
-- Back End: be/what-you-are-building
-- Front End: fe/what-you-are-building
-- Content: ct/what-you-are-building
+## Your Folder
+You only touch files inside your team folder.
+Do not open, edit, or create files in another team folder.
 
-Example: be/planet-positions or fe/date-picker or ct/seed-events
+| Team      | Your folder  | Stay out of              |
+|-----------|-------------|--------------------------|
+| Back End  | backend/    | frontend/  content/      |
+| Front End | frontend/   | backend/   content/      |
+| Content   | content/    | backend/   frontend/     |
 
-## How to Create a Branch
-1. Open GitHub Desktop
-2. Click Current Branch at the top
-3. Click New Branch
-4. Name it using the format above
-5. Click Create Branch
-6. Now work in VS Code
+## Every Session — Four Steps In Order
+1. Pull — open GitHub Desktop, click Fetch origin then Pull origin
+2. Work — write your code or content in VS Code
+3. Commit — write a real message describing what you did
+4. Push — click Push origin before you close your laptop
 
-## How to Merge Into Main
-You do not merge yourself. When your work is done:
+## Commit Message Rules
+Good: added planet position function for Mars using Skyfield
+Good: seeded 30 verified solar eclipse events into events.csv
+Good: built date picker input and submit button in index.html
+Bad: stuff
+Bad: update
+Bad: changes
+Bad: fixed things
+
+## When Your Work Is Ready to Merge
+Do not merge yourself. Do this instead:
 1. Push your branch
 2. Go to github.com/Shubaan7/Antikythera_26
 3. Click Compare and pull request
-4. Write what you did and why it is ready
+4. Write a short description of what you built and that it is ready
 5. Wait for the repo owner to review and approve
 
-## Commit Message Rules
-Be specific. One sentence. What did you actually do.
-Good: added eclipse detection function for solar eclipses
-Good: seeded 30 verified events into events.csv
-Bad: stuff
-Bad: changes
-Bad: update
-Bad: fixed things
+## What Each Team Is Building
 
-## Reference Material
-| What you need | Where to find it |
-|--------------|-----------------|
-| Planet position library | rhodesmill.org/skyfield |
-| Eclipse dates | eclipse.gsfc.nasa.gov |
-| Event browser inspiration | theskylive.com |
-| Planet position verifier | ssd.jpl.nasa.gov/horizons |
-| Repo | github.com/Shubaan7/Antikythera_26 |
+Back End
+Given a date, return where every planet is as JSON via Flask.
+Detect eclipses and conjunctions from those positions.
+Query the SQLite database for historical events by date and type.
+Files: backend/app.py, backend/orbital_calculator.py, backend/event_detector.py, backend/database.py
 
-## What Each Team Builds
-Back End — given a date, return planet positions and detected events as JSON via Flask
-Front End — one webpage with a date picker, solar system canvas diagram, and event list
-Content — 50 verified real historical events in events.csv loaded into SQLite database
+Front End
+One webpage with a dark theme.
+A date picker and submit button at the top.
+A solar system canvas diagram on the left showing planet positions.
+An event list panel on the right showing nearby events.
+A second screen for browsing and searching all events.
+Files: frontend/index.html, frontend/style.css, frontend/app.js, frontend/diagram.js
 
-## Contact
-Any questions, conflicts, or broken code — post in Discord immediately.
-Do not guess. Do not stay stuck. Ask.
+Content
+A spreadsheet of 50 verified real historical astronomical events.
+A database schema defining the events and bodies tables.
+A script that loads the spreadsheet into the SQLite database.
+Files: content/events.csv, content/schema.sql, content/seed_events.py
+
+## Reference Links
+Planet position library:       rhodesmill.org/skyfield
+Eclipse dates source:          eclipse.gsfc.nasa.gov
+Conjunction and event dates:   timeanddate.com/eclipse/list.html
+Planet position verifier:      ssd.jpl.nasa.gov/horizons
+UI inspiration:                theskylive.com
+Repo:                          github.com/Shubaan7/Antikythera_26
+
+## Questions and Blockers
+Post in Discord immediately if you are stuck, confused, or something is broken.
+Do not guess. Do not stay stuck for more than 30 minutes without asking.

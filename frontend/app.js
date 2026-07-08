@@ -1,21 +1,5 @@
-// TODO: Front End team works here
-// This file handles the date picker, API calls, and event card rendering
-
-const API_BASE = 'http://localhost:5000';
-
-document.getElementById('submit-btn').addEventListener('click', async () => {
-  const date = document.getElementById('date-input').value;
-  if (!date) return;
-
-  // Fetch planet positions
-  const posRes = await fetch(`${API_BASE}/api/positions?date=${date}`);
-  const posData = await posRes.json();
-  console.log('Positions:', posData);
-  // TODO: pass posData to diagram.js to draw planets
-
-  // Fetch nearby events
-  const evtRes = await fetch(`${API_BASE}/api/events?date=${date}&days=30`);
-  const evtData = await evtRes.json();
-  console.log('Events:', evtData);
-  // TODO: render evtData.events as cards in #events-list
-});
+// Front End team — main logic
+// Handle the date picker submit button click
+// Call the Flask API at /api/positions and /api/events
+// Render the event cards in the right panel
+// API base URL: http://localhost:5000 (change to Render URL when deployed)
