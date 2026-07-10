@@ -31,7 +31,7 @@ var allEvents = [];
 // Show a friendly error in the message bar, or hide the bar when there is nothing to say.
 function showMessage(text) {
     if (text) {
-        messageBar.textContent = text;
+        messageBar.textContent = text;3333333244
         messageBar.hidden = false;
     } else {
         messageBar.hidden = true;
