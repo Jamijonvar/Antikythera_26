@@ -13,3 +13,7 @@ content/events.db
 
 # Editor and operating system clutter.
 .DS_Store
+
+# Claude Code and editor tooling config. Each person has their own copy and it is
+# not part of the app, so it should never be committed.
+.claude/
