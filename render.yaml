@@ -1,0 +1,21 @@
+# Render deployment blueprint.
+# When you connect this repository on Render, it reads this file automatically and
+# fills in the build and start commands for you, so there is almost nothing left to type.
+#
+# What each step does:
+#   buildCommand: installs our three Python libraries plus gunicorn, then runs the
+#                 seeder so the live site starts with a real events database, built
+#                 fresh from content/events.csv every time we deploy.
+#   startCommand: runs the real production server. Gunicorn is the same kind of tool
+#                 Flask's own documentation recommends for anything other than local
+#                 development, unlike the app.run(debug=True) line we use on our laptops.
+services:
+  - type: web
+    name: antikythera
+    runtime: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt && python content/seed_events.py
+    startCommand: gunicorn --chdir backend app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9

@@ -197,6 +197,14 @@ main {
     background: #10162a;
     border: 1px solid var(--panel-edge);
     padding: 12px 14px;
+    /* The whole card is clickable and loads that event's snapshot, so show a pointer. */
+    cursor: pointer;
+}
+
+/* Lift the card on hover so it is obvious you can click it. Corners stay square. */
+.event-card:hover {
+    border-color: var(--accent);
+    background: #141d38;
 }
 
 .event-card .event-top {
@@ -251,4 +259,159 @@ main {
     padding: 10px 12px;
     font-size: 14px;
     margin-bottom: 16px;
+}
+
+/* The type filter chips on the Browse tab. */
+.type-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.chip {
+    background: transparent;
+    color: var(--text-soft);
+    border: 1px solid var(--panel-edge);
+    padding: 6px 12px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.chip:hover {
+    border-color: var(--accent);
+}
+
+.chip.active {
+    background: var(--accent);
+    color: #1a1300;
+    border-color: var(--accent);
+    font-weight: 600;
+}
+
+/* The decade heading that sits above each group of events. */
+.decade-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 18px 0 10px;
+    padding-top: 8px;
+    border-top: 1px solid var(--panel-edge);
+    color: var(--text-soft);
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* The very first heading in a list needs no divider above it. */
+.decade-heading:first-child {
+    margin-top: 0;
+    border-top: none;
+    padding-top: 0;
+}
+
+.decade-count {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* The credits footer at the bottom of the page. */
+.credits {
+    border-top: 1px solid var(--panel-edge);
+    padding: 24px 28px 32px;
+    text-align: center;
+    color: var(--text-soft);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.credits p {
+    margin: 4px 0;
+}
+
+.credits-team {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.credits-course {
+    color: var(--accent);
+}
+
+/* The Sources screen. A readable column listing every resource the project uses. */
+.sources-panel {
+    max-width: 820px;
+}
+
+.sources-intro {
+    color: var(--text-soft);
+    font-size: 14px;
+    margin: 0 0 20px;
+}
+
+/* The heading for each group of sources, for example Data sources. */
+.sources-group {
+    color: var(--accent);
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 24px 0 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--panel-edge);
+}
+
+/* The team credited beside a sources group heading. It opts out of the heading's
+   uppercase accent styling so the names read as ordinary text. */
+.sources-team {
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--text-soft);
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.source-item {
+    margin-bottom: 18px;
+}
+
+.source-item h4 {
+    margin: 0 0 6px;
+    font-size: 15px;
+    color: var(--text);
+}
+
+.source-links {
+    list-style: none;
+    margin: 0 0 8px;
+    padding: 0;
+}
+
+.source-links li {
+    font-size: 13px;
+    margin: 2px 0;
+    color: var(--text-soft);
+}
+
+.source-links a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.source-links a:hover {
+    text-decoration: underline;
+}
+
+/* File names are shown in a monospace face so they read as code, not prose. */
+.source-file {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    color: var(--text-soft);
+}
+
+.source-how {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text);
 }

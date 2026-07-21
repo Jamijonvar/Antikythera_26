@@ -33,6 +33,7 @@
         <nav class="tabs">
             <button id="tab-sky" class="tab active" type="button">Sky View</button>
             <button id="tab-browse" class="tab" type="button">Browse Events</button>
+            <button id="tab-sources" class="tab" type="button">Sources</button>
         </nav>
     </header>
 
@@ -60,10 +61,100 @@
             <div class="panel browse-panel">
                 <h2>Browse every event</h2>
                 <input type="search" id="browse-search" class="browse-search" placeholder="Search by type, planet, or words in the description">
+                <!-- app.js fills this row with one clickable chip per event type. -->
+                <div id="browse-chips" class="type-chips"></div>
                 <div id="browse-list" class="events-list"></div>
             </div>
         </section>
+
+        <!-- Screen three, the sources screen. Every resource the project is built on, -->
+        <!-- with links and a short note on how we used each one. -->
+        <section id="screen-sources" class="screen">
+            <div class="panel sources-panel">
+                <h2>Sources and resources</h2>
+                <p class="sources-intro">Everything this project is built on, with links and how we used each one.</p>
+
+                <h3 class="sources-group">Data sources <span class="sources-team">Frontend team: Shubaan, Nia, Joseph, Jeremiah, Dillon</span></h3>
+
+                <div class="source-item">
+                    <h4>NASA GSFC Eclipse Web Site (Fred Espenak, NASA Goddard)</h4>
+                    <ul class="source-links">
+                        <li><a href="https://eclipse.gsfc.nasa.gov/" target="_blank" rel="noopener noreferrer">eclipse.gsfc.nasa.gov</a></li>
+                        <li><a href="https://eclipse.gsfc.nasa.gov/LEcat5/LE1901-2000.html" target="_blank" rel="noopener noreferrer">Lunar eclipse catalog</a></li>
+                        <li><a href="https://eclipse.gsfc.nasa.gov/SEsearch/SEsearch.php" target="_blank" rel="noopener noreferrer">Solar eclipse search</a></li>
+                    </ul>
+                    <p class="source-how">How we used it: every eclipse in our database, including its date, type, magnitude, duration, and Saros number, comes from these NASA Goddard catalogs. This is the verified real source behind all 50 eclipse cards and behind our proof of concept, the 21 August 2017 total solar eclipse.</p>
+                </div>
+
+                <div class="source-item">
+                    <h4>Our eclipse dataset (the CSV)</h4>
+                    <ul class="source-links">
+                        <li><span class="source-file">eclipses_1950_2030_solar_lunar_even_split_fixed_rows.csv</span> converted into <span class="source-file">content/events.csv</span></li>
+                    </ul>
+                    <p class="source-how">How we used it: 50 eclipses, 25 solar and 25 lunar spread from 1950 to 2030, that we compiled from the NASA GSFC catalogs above, plus the 2017 eclipse and the 2020 great conjunction. Our seeder script loads these into the database that feeds the events panel and the Browse tab.</p>
+                </div>
+
+                <div class="source-item">
+                    <h4>NASA JPL DE421 planetary ephemeris (de421.bsp)</h4>
+                    <ul class="source-links">
+                        <li><a href="https://ssd.jpl.nasa.gov/" target="_blank" rel="noopener noreferrer">ssd.jpl.nasa.gov</a></li>
+                    </ul>
+                    <p class="source-how">How we used it: this file is the actual table of planetary positions that our code reads. It is produced by NASA JPL and covers 1899 to 2053, which is exactly why our app limits dates to that range. Every dot in the solar system diagram traces back to this file.</p>
+                </div>
+
+                <div class="source-item">
+                    <h4>NASA JPL Horizons (verification)</h4>
+                    <ul class="source-links">
+                        <li><a href="https://ssd.jpl.nasa.gov/horizons/" target="_blank" rel="noopener noreferrer">ssd.jpl.nasa.gov/horizons</a></li>
+                    </ul>
+                    <p class="source-how">How we used it: to spot check that the positions our app calculates match NASA's own published numbers.</p>
+                </div>
+
+                <h3 class="sources-group">Software libraries and tools <span class="sources-team">Backend team: Jonathan, Kiet, Dieuson, Sophia</span></h3>
+
+                <div class="source-item">
+                    <h4>Skyfield (Python astronomy library)</h4>
+                    <ul class="source-links">
+                        <li><a href="https://rhodesmill.org/skyfield/" target="_blank" rel="noopener noreferrer">rhodesmill.org/skyfield</a></li>
+                    </ul>
+                    <p class="source-how">How we used it: it reads the DE421 file and does the astronomy. In our position code we ask it where the Earth is looking to see each body, and it hands back the right ascension, declination, and distance. It is the engine behind the diagram.</p>
+                </div>
+
+                <div class="source-item">
+                    <h4>Flask and flask-cors (Python web framework)</h4>
+                    <ul class="source-links">
+                        <li><a href="https://flask.palletsprojects.com/" target="_blank" rel="noopener noreferrer">flask.palletsprojects.com</a></li>
+                    </ul>
+                    <p class="source-how">How we used it: runs our backend server, serves the web page, and answers the position and event requests.</p>
+                </div>
+
+                <div class="source-item">
+                    <h4>SQLite (database)</h4>
+                    <ul class="source-links">
+                        <li><a href="https://www.sqlite.org/" target="_blank" rel="noopener noreferrer">sqlite.org</a></li>
+                    </ul>
+                    <p class="source-how">How we used it: stores the events. It is built into Python, so there is nothing to install. Our schema defines the table and our database code queries it by date.</p>
+                </div>
+
+                <h3 class="sources-group">Inspiration</h3>
+
+                <div class="source-item">
+                    <h4>The Antikythera Mechanism</h4>
+                    <ul class="source-links">
+                        <li><a href="https://en.wikipedia.org/wiki/Antikythera_mechanism" target="_blank" rel="noopener noreferrer">en.wikipedia.org/wiki/Antikythera_mechanism</a></li>
+                    </ul>
+                    <p class="source-how">How we used it: the whole concept. It is an ancient Greek device that tracked planetary motion and predicted eclipses, which is what our app does with modern data. That is where the project name comes from.</p>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <!-- The credits for the whole team, the professor, and the course. -->
+    <footer class="credits">
+        <p class="credits-team">Created by Kiet Le, Shubaan Meyyappan, Jonathan Varghese, Joseph G Donnelly, Dieuson Jean, Nia Kochadze, Dillon Borowski, Jeremiah J Simon and Sophia Johnson.</p>
+        <p class="credits-prof">Professor Susrutha Babu Sukhavasi</p>
+        <p class="credits-course">Summer 2026 Applied Programming Concepts ELEC WIT</p>
+    </footer>
 
     <!-- diagram.js must load before app.js, because app.js calls the drawing function it defines. -->
     <script src="diagram.js"></script>

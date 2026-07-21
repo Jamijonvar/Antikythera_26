@@ -1,6 +1,56 @@
 date,event_type,planets,description,source
 2017-08-21,Solar Eclipse,Sun Moon Earth,Total solar eclipse visible across North America,eclipse.gsfc.nasa.gov
 2020-12-21,Conjunction,Jupiter Saturn,Great conjunction closest approach in 400 years,nasa.gov
+1950-04-02,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.0329, duration 26m 54s, Saros 131",eclipse.gsfc.nasa.gov
+1950-09-12,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0182, duration 01m14s, Saros 124",eclipse.gsfc.nasa.gov
+1953-07-26,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse (shallow), magnitude 1.8628, duration 100m 42s, Saros 128",eclipse.gsfc.nasa.gov
+1954-06-30,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0357, duration 02m35s, Saros 126",eclipse.gsfc.nasa.gov
+1956-06-08,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0581, duration 04m45s, Saros 146",eclipse.gsfc.nasa.gov
+1957-05-13,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.2982, duration 77m 36s, Saros 130",eclipse.gsfc.nasa.gov
+1959-10-02,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0325, duration 03m02s, Saros 143",eclipse.gsfc.nasa.gov
+1960-09-05,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse (deep/central), magnitude 1.4239, duration 86m 42s, Saros 127",eclipse.gsfc.nasa.gov
+1962-02-05,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0430, duration 04m08s, Saros 130",eclipse.gsfc.nasa.gov
+1964-12-19,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.1748, duration 58m 54s, Saros 134",eclipse.gsfc.nasa.gov
+1965-05-30,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0544, duration 05m15s, Saros 127",eclipse.gsfc.nasa.gov
+1968-04-13,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.1116, duration 48m 30s, Saros 131",eclipse.gsfc.nasa.gov
+1968-09-22,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0099, duration 00m40s, Saros 124",eclipse.gsfc.nasa.gov
+1971-08-06,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse (shallow), magnitude 1.7283, duration 99m 24s, Saros 128",eclipse.gsfc.nasa.gov
+1972-07-10,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0379, duration 02m36s, Saros 126",eclipse.gsfc.nasa.gov
+1974-06-20,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0592, duration 05m09s, Saros 146",eclipse.gsfc.nasa.gov
+1974-11-29,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.2896, duration 75m 42s, Saros 125",eclipse.gsfc.nasa.gov
+1977-10-12,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0270, duration 02m37s, Saros 143",eclipse.gsfc.nasa.gov
+1978-03-24,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse (shallow), magnitude 1.4518, duration 90m 42s, Saros 122",eclipse.gsfc.nasa.gov
+1980-02-16,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0434, duration 04m08s, Saros 130",eclipse.gsfc.nasa.gov
+1982-01-09,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.3310, duration 77m 42s, Saros 124",eclipse.gsfc.nasa.gov
+1984-11-22,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0237, duration 02m00s, Saros 142",eclipse.gsfc.nasa.gov
+1985-05-04,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.2369, duration 67m 42s, Saros 121",eclipse.gsfc.nasa.gov
+1986-10-17,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.2455, duration 73m 42s, Saros 136",eclipse.gsfc.nasa.gov
+1988-03-18,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0464, duration 03m46s, Saros 139",eclipse.gsfc.nasa.gov
+1990-02-09,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.0750, duration 42m 18s, Saros 133",eclipse.gsfc.nasa.gov
+1991-07-11,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse (maximum), magnitude 1.0800, duration 06m53s, Saros 136",eclipse.gsfc.nasa.gov
+1993-11-29,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.0876, duration 46m 42s, Saros 135",eclipse.gsfc.nasa.gov
+1995-10-24,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0213, duration 02m10s, Saros 143",eclipse.gsfc.nasa.gov
+1997-09-16,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.1909, duration 61m 30s, Saros 137",eclipse.gsfc.nasa.gov
+1998-02-26,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0441, duration 04m09s, Saros 130",eclipse.gsfc.nasa.gov
+2001-01-09,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.1889, duration 61m 00s, Saros 134",eclipse.gsfc.nasa.gov
+2001-06-21,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0495, duration 04m57s, Saros 127",eclipse.gsfc.nasa.gov
+2003-11-23,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0379, duration 01m57s, Saros 152",eclipse.gsfc.nasa.gov
+2004-05-04,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.3035, duration 75m 30s, Saros 131",eclipse.gsfc.nasa.gov
+2007-08-28,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse (shallow), magnitude 1.4758, duration 90m 00s, Saros 128",eclipse.gsfc.nasa.gov
+2008-08-01,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0394, duration 02m27s, Saros 126",eclipse.gsfc.nasa.gov
+2010-12-21,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.2561, duration 72m 18s, Saros 125",eclipse.gsfc.nasa.gov
+2012-11-13,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0500, duration 04m02s, Saros 133",eclipse.gsfc.nasa.gov
+2014-04-15,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.2907, duration 77m 48s, Saros 122",eclipse.gsfc.nasa.gov
+2015-09-28,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.2764, duration 71m 54s, Saros 137",eclipse.gsfc.nasa.gov
+2016-03-09,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0450, duration 04m09s, Saros 130",eclipse.gsfc.nasa.gov
+2019-01-21,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.1953, duration 62m 00s, Saros 134",eclipse.gsfc.nasa.gov
+2019-07-02,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0459, duration 04m33s, Saros 127",eclipse.gsfc.nasa.gov
+2022-11-08,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse (deep/central), magnitude 1.3589, duration 85m 00s, Saros 136",eclipse.gsfc.nasa.gov
+2024-04-08,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0566, duration 04m28s, Saros 139",eclipse.gsfc.nasa.gov
+2026-03-03,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.1507, duration 58m 18s, Saros 133",eclipse.gsfc.nasa.gov
+2027-08-02,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0790, duration 06m23s, Saros 136",eclipse.gsfc.nasa.gov
+2029-12-20,Lunar Eclipse,Sun Earth Moon,"Total Lunar Eclipse, magnitude 1.1174, duration 53m 42s, Saros 135",eclipse.gsfc.nasa.gov
+2030-11-25,Solar Eclipse,Sun Moon Earth,"Total Solar Eclipse, magnitude 1.0468, duration 03m44s, Saros 133",eclipse.gsfc.nasa.gov
 # Content team — add 48 more verified events above this line
 # Source your dates from eclipse.gsfc.nasa.gov and timeanddate.com
 # Each row needs: date, event_type, planets, description, source

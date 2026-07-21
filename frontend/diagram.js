@@ -51,8 +51,21 @@ function drawBody(context, x, y, radius, colour, label) {
     context.fillText(label, x + radius + 4, y + 4);
 }
 
+// Draw a bright ring around a body to mark it as one of the bodies in the event being shown.
+// We use white so it stands out on every body, including the yellow Sun.
+function drawHighlightRing(context, x, y, radius) {
+    context.beginPath();
+    context.arc(x, y, radius, 0, Math.PI * 2);
+    context.strokeStyle = "#ffffff";
+    context.lineWidth = 2;
+    context.stroke();
+    context.lineWidth = 1;
+}
+
 // The main entry point. app.js calls this with the canvas and the list of bodies from the backend.
-function drawSolarSystem(canvas, planets) {
+// The optional highlight argument is a list of body names to emphasise, such as the Sun and Moon
+// of a clicked eclipse. When it is left out, nothing is emphasised and the diagram looks as before.
+function drawSolarSystem(canvas, planets, highlight) {
     var context = canvas.getContext("2d");
     var width = canvas.width;
     var height = canvas.height;
@@ -77,6 +90,14 @@ function drawSolarSystem(canvas, planets) {
 
     var lookup = indexByName(planets);
 
+    // Build a set of the bodies to emphasise, so we can check each one quickly as we draw.
+    var highlightSet = {};
+    if (highlight) {
+        for (var hi = 0; hi < highlight.length; hi++) {
+            highlightSet[highlight[hi]] = true;
+        }
+    }
+
     // The innermost ring radius and the gap between rings. These keep every ring inside the canvas.
     var firstRing = 60;
     var ringGap = 32;
@@ -99,7 +120,10 @@ function drawSolarSystem(canvas, planets) {
     context.beginPath();
     context.arc(centreX, centreY, 26, 0, Math.PI * 2);
     context.fill();
-    drawBody(context, centreX, centreY, 10, "#f5c451", "Sun");
+    drawBody(context, centreX, centreY, highlightSet["Sun"] ? 12 : 10, "#f5c451", "Sun");
+    if (highlightSet["Sun"]) {
+        drawHighlightRing(context, centreX, centreY, 18);
+    }
 
     // Work out the Earth angle from the Sun, because the backend does not send the Earth itself.
     // We will reuse this to place the Moon around the Earth further down.
@@ -130,7 +154,11 @@ function drawSolarSystem(canvas, planets) {
 
         var x = centreX + ringRadius * Math.cos(angleRadians);
         var y = centreY + ringRadius * Math.sin(angleRadians);
-        drawBody(context, x, y, 6, body.colour, body.name);
+        var emphasised = highlightSet[body.name] === true;
+        drawBody(context, x, y, emphasised ? 8 : 6, body.colour, body.name);
+        if (emphasised) {
+            drawHighlightRing(context, x, y, 12);
+        }
 
         if (body.name === "Earth") {
             earthX = x;
@@ -145,6 +173,9 @@ function drawSolarSystem(canvas, planets) {
         var moonDistance = 16;
         var moonX = earthX + moonDistance * Math.cos(moonAngle);
         var moonY = earthY + moonDistance * Math.sin(moonAngle);
-        drawBody(context, moonX, moonY, 3, "#cfd4e0", "Moon");
+        drawBody(context, moonX, moonY, highlightSet["Moon"] ? 5 : 3, "#cfd4e0", "Moon");
+        if (highlightSet["Moon"]) {
+            drawHighlightRing(context, moonX, moonY, 9);
+        }
     }
 }
